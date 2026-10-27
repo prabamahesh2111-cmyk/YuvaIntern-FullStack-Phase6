@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task & Progress Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎓 Student Task Manager</h1>
+        <p>Plan your work. Track your progress. Achieve your goals!</p>
+    </header>
+
+    <main class="container">
+
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+        </section>
+
+        <section class="task-form">
+            <h2>Add New Task</h2>
+
+            <form id="taskForm">
+                <label for="taskTitle">Task Name</label>
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Enter task name"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="taskPriority">Priority</label>
+                <select id="taskPriority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <label for="taskDate">Due Date</label>
+                <input type="date" id="taskDate" required>
+
+                <button type="submit">+ Add Task</button>
+            </form>
+        </section>
+
+        <section class="task-list-section">
+            <h2>My Tasks</h2>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+            >
+
+            <div class="filters">
+                <button type="button" class="filter-btn active" data-filter="all">
+                    All
+                </button>
+                <button type="button" class="filter-btn" data-filter="pending">
+                    Pending
+                </button>
+                <button type="button" class="filter-btn" data-filter="completed">
+                    Completed
+                </button>
+            </div>
+
+            <p id="emptyMessage">No tasks yet. Add your first task!</p>
+            <div id="taskList"></div>
+
+            <div class="progress-section">
+                <h3>Overall Progress</h3>
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+                <p id="progressText">0% completed</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Phase 6 Capstone Project | Developed by Praba</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f1ff;
+    color: #29243a;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #512da8, #8e44ad);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+.container {
+    max-width: 900px;
+    width: 92%;
+    margin: 30px auto;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card,
+.task-form,
+.task-list-section {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(50, 30, 80, 0.08);
+}
+
+.card {
+    text-align: center;
+    border-top: 4px solid #805ad5;
+}
+
+.card h3 {
+    font-size: 16px;
+    color: #625778;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #6b35b5;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #512da8;
+}
+
+.task-form {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #d4cbe8;
+    border-radius: 7px;
+    font-size: 15px;
+    background: white;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #a78bfa;
+    border-color: #805ad5;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+#taskForm button {
+    width: 100%;
+    margin-top: 18px;
+    background: #6b35b5;
+    color: white;
+    font-weight: bold;
+}
+
+#searchInput {
+    margin-bottom: 15px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background: #eee8fa;
+    color: #512da8;
+}
+
+.filter-btn.active {
+    background: #6b35b5;
+    color: white;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid #e5def1;
+    border-radius: 9px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-info h3 {
+    font-size: 17px;
+}
+
+.task-info p {
+    font-size: 13px;
+    color: #71677f;
+    margin-top: 4px;
+}
+
+.task-item.completed .task-info h3 {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-item.completed {
+    background: #f8f7fb;
+}
+
+.task-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.complete-btn {
+    background: #d9f7e5;
+    color: #176b3a;
+}
+
+.edit-btn {
+    background: #e4e8ff;
+    color: #303f9f;
+}
+
+.delete-btn {
+    background: #ffe1e1;
+    color: #a52222;
+}
+
+.priority {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.priority.High {
+    background: #ffe1e1;
+    color: #a52222;
+}
+
+.priority.Medium {
+    background: #fff0c2;
+    color: #795500;
+}
+
+.priority.Low {
+    background: #d9f7e5;
+    color: #176b3a;
+}
+
+#emptyMessage {
+    text-align: center;
+    padding: 20px;
+    color: #71677f;
+}
+
+.progress-section {
+    margin-top: 30px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 18px;
+    margin-top: 10px;
+    background: #e7e0f1;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6b35b5, #b388ff);
+    transition: width 0.3s;
+}
+
+#progressText {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #625778;
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .task-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-actions {
+        width: 100%;
+    }
+}
